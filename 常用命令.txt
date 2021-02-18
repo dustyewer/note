@@ -1,0 +1,37 @@
+git remote add <name> <url>
+name 为远程仓库的名字，自定义，一般为origin，
+url 为远程仓库地址，就是你自己新建的那个仓库的地址，如git@github.com:gzyzwx/git-test.git
+第一次push
+git push -u origin master
+
+
+
+mysql服务端: sudo systemctl  start mysqld
+mysql客户端: mysql -u root -p"12345678"
+
+mongo服务端: sudo systemctl start mongodb
+mongo客户端: mongo -uadmin -p12345678 admin
+
+
+mongodb!
+
+==> 错误： Cannot find the fakeroot binary.
+生成时出错: mongodb-bin-4.0
+[yewer@yewer-20267 bin]$ yay -S base-devel 
+:: 在组 base-devel 中有 24 成员：
+:: 软件仓库 core
+   1) autoconf  2) automake  3) binutils  4) bison  5) fakeroot  6) file  7) findutils
+   8) flex  9) gawk  10) gcc  11) gettext  12) grep  13) groff  14) gzip  15) libtool
+   16) m4  17) make  18) pacman  19) patch  20) pkgconf  21) sed  22) sudo  23) texinfo
+   24) which
+
+输入某个选择 ( 默认=全部选定 ): 5
+
+
+安装成功了
+    1) mongodb 2) mongodb-3.4 3) mongodb-3.6-bin 4) mongodb-bin 5) mongodb-bin-3.2 6) mongodb-bin-3.6 7) mongodb-bin-4.0 8) mongodb-shell-bin 9) mongodb34-bin 10) percona-server-mongodb-bin 
+
+输入数字 (默认=1): 7
+
+ 
+Cluster0 帐号/密码 yewer/qwertyuiop
