@@ -12,6 +12,8 @@ mysql客户端: mysql -u root -p"12345678"
 mongo服务端: sudo systemctl start mongodb
 mongo客户端: mongo -uadmin -p12345678 admin
 
+sudo systemctl start docker
+
 
 mongodb!
 
