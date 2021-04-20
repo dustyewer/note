@@ -1,8 +1,4 @@
-git remote add <name> <url>
-name 为远程仓库的名字，自定义，一般为origin，
-url 为远程仓库地址，就是你自己新建的那个仓库的地址，如git@github.com:gzyzwx/git-test.git
-第一次push
-git push -u origin master
+
 
 
 
