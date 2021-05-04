@@ -1,0 +1,32 @@
+Docker中安装redis
+
+1.拉取镜像：docker pull redis:latest
+2.运行 redis 容器：（在运行容器之前先向下看2020.8.13更新那一块关于redis的更新）
+
+     可以不设置密码：docker run -itd --name myredis -p 6379:6379 redis
+     也可以设置密码：docker run -d --name myredis -p 6379:6379 redis --requirepass "password"
+
+  其中myredis是容器名称,"mypassword"为要设置的密码
+
+3.再次进入redis容器进行交互：docker exec -it myredis /bin/bash
+
+
+Docker中的RabbitMQ安装
+
+1. 拉取最新镜像：docker pull rabbitmq:management（加上management以便启动启动 RabbitMQ 后可以打开管理界面）
+
+2. 创建rabbitmq容器 ：
+
+     # 方式一：默认guest 用户，密码也是 guest
+    docker run -d --hostname my-rabbit --name rabbit -p 15672:15672 -p 5672:5672 rabbitmq:management
+     # 方式二：设置用户名root，密码123123
+    docker run -d --hostname my-rabbit --name rabbit -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=123123 -p 15672:15672 -p 5672:5672 rabbitmq:management
+
+3. 访问管理界面
+访问管理界面的地址就是 http://宿主机IP:15672
+
+
+Docker中的MonogoDB安装
+
+docker pull mongo:latest
+docker run -id --name=cas_mongo -p 27017:27017 mongo
