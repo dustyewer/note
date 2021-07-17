@@ -1,4 +1,4 @@
-以管理员身份打开 PowerShell 并运行：
+# 以管理员身份打开 PowerShell 并运行：
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 下载 Linux 内核更新包
@@ -9,7 +9,7 @@ wsl --set-default-version 2
 
 
 
-首先更新软件源，保证其为最新。
+# 首先更新软件源，保证其为最新。
 sudo apt-get update
 sudo apt-get upgrade
 
