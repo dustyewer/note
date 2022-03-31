@@ -1,5 +1,4 @@
 # Docker中安装redis
-
 1.拉取镜像：docker pull redis:latest
 2.运行 redis 容器：（在运行容器之前先向下看2020.8.13更新那一块关于redis的更新）
 
@@ -68,3 +67,25 @@ docker-compose pull && docker-compose up -d
 # 启动完成后访问网页 http://localhost:8081/#/submit 将pinpoint-docker/pinpoint-flink/build/pinpoint-flink-job-{pinpoint-version}.jar 文件手动upload到flik组件中，上传的版本需要和pinpoint保持一致
 # 访问：http://localhost:8079/ 即可浏览pinpoint页面
 # 官方说明：https://github.com/naver/pinpoint-docker
+
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+docker run -d -p 80:80 镜像id
+
+windows    docker exec -it 容器id bash
+docker exec -it 容器id /bin/bash
+
+docker build  -t yewer/centos:java .
+
+docker commit：从容器创建一个新的镜像；
+docker build：配合 Dockerfile 文件创建镜像。
+
+
+docker save -o mydocker.tar yewer/centos:java
+docker load -i mydocker.tar 
+
+#把本地镜像改名成仓库要求的名字
+docker tag yewer/centos:java dustyewer/java:v1
+#推送到仓库
+docker push dustyewer/java:v1
