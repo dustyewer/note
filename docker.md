@@ -89,3 +89,6 @@ docker load -i mydocker.tar
 docker tag yewer/centos:java dustyewer/java:v1
 #推送到仓库
 docker push dustyewer/java:v1
+
+docker容器运行必须有一个前台进程，如果没有，容器认为空闲会退出，比如centos
+docker run -dit centos /bin/bash
