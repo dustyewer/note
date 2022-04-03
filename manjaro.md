@@ -115,6 +115,12 @@ yay -S redis
 yay -S docker
 
 
+打印机
+sudo pacman -S manjaro-printer
+sudo systemctl enable --now cups.service
+sudo systemctl enable --now cups.socket
+sudo systemctl enable --now cups.path
+
 
 
 pacman -S mysql
