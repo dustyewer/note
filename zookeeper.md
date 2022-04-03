@@ -1,33 +1,33 @@
-#²¢²»´æÔÚÓÃ»§¹ÜÀíµÄ¸ÅÄî
-#ÆÕÍ¨ÓÃ»§µÇÂ¼ºó¾Í´æÔÚ
+#å¹¶ä¸å­˜åœ¨ç”¨æˆ·ç®¡ç†çš„æ¦‚å¿µ
+#æ™®é€šç”¨æˆ·ç™»å½•åŽå°±å­˜åœ¨
 addauth digest user:password
 
-#²éÈ¨ÏÞ
+#æŸ¥æƒé™
 getAcl /test
 
-CREATE   c ¿ÉÒÔ´´½¨×Ó½Úµã
-DELETE   d ¿ÉÒÔÉ¾³ý×Ó½Úµã£¨½öÏÂÒ»¼¶½Úµã£©
-READ     r ¿ÉÒÔ¶ÁÈ¡½ÚµãÊý¾Ý¼°ÏÔÊ¾×Ó½ÚµãÁÐ±í
-WRITE    w ¿ÉÒÔÉèÖÃ½ÚµãÊý¾Ý
-ADMIN    a ¿ÉÒÔÉèÖÃ½Úµã·ÃÎÊ¿ØÖÆÁÐ±íÈ¨ÏÞ
+CREATE   c å¯ä»¥åˆ›å»ºå­èŠ‚ç‚¹
+DELETE   d å¯ä»¥åˆ é™¤å­èŠ‚ç‚¹ï¼ˆä»…ä¸‹ä¸€çº§èŠ‚ç‚¹ï¼‰
+READ     r å¯ä»¥è¯»å–èŠ‚ç‚¹æ•°æ®åŠæ˜¾ç¤ºå­èŠ‚ç‚¹åˆ—è¡¨
+WRITE    w å¯ä»¥è®¾ç½®èŠ‚ç‚¹æ•°æ®
+ADMIN    a å¯ä»¥è®¾ç½®èŠ‚ç‚¹è®¿é—®æŽ§åˆ¶åˆ—è¡¨æƒé™
 
 
-#ÉèÖÃÈ¨ÏÞ,ÉèÖÃÒÔÓÃ»§Ä£Ê½µÄÈ¨ÏÞÒªÏÈÒÔÓÃ»§µÇÂ¼
+#è®¾ç½®æƒé™,è®¾ç½®ä»¥ç”¨æˆ·æ¨¡å¼çš„æƒé™è¦å…ˆä»¥ç”¨æˆ·ç™»å½•
 setAcl /test auth:user:password:cdrwa
 
-#ÉèÖÃ¶à¸öÄ£Ê½µÄÈ¨ÏÞÓÃ,·Ö¿ª
+#è®¾ç½®å¤šä¸ªæ¨¡å¼çš„æƒé™ç”¨,åˆ†å¼€
 setAcl /test auth:user:password:cdrwa,ip:127.0.0.1:cdrwa,world:anyone:cdrwa
 
-#digestÊÇÃÜÎÄÃÜÂëÄ£Ê½,¸Ð¾õÖ»ÊÇÕâÌõÃüÁîÀïÃÜÂëÊÇ¼ÓÃÜµÄ¶øÒÑ£¬ÓÃ»§µÇÂ¼»¹ÊÇºÍÆÕÍ¨µÄÒ»Ñù£¬ÕâÀïµÄÃÜÎÄÄÄÀïÀ´ÄØ£¿µÃÓÃauthÄ£Ê½ÉèÖÃÒ»ÏÂ£¬ÔÙÓÃgetAcl²é¿´ÏÂ
+#digestæ˜¯å¯†æ–‡å¯†ç æ¨¡å¼,æ„Ÿè§‰åªæ˜¯è¿™æ¡å‘½ä»¤é‡Œå¯†ç æ˜¯åŠ å¯†çš„è€Œå·²ï¼Œç”¨æˆ·ç™»å½•è¿˜æ˜¯å’Œæ™®é€šçš„ä¸€æ ·ï¼Œè¿™é‡Œçš„å¯†æ–‡å“ªé‡Œæ¥å‘¢ï¼Ÿå¾—ç”¨authæ¨¡å¼è®¾ç½®ä¸€ä¸‹ï¼Œå†ç”¨getAclæŸ¥çœ‹ä¸‹
 setAcl /test digest:user:tpUq/4Pn5A64fVZyQ0gOJ8ZWqkY=:cdrwa
 
 
-#zookeeperµÄ³¬¼¶¹ÜÀíÔ±
-#linuxÏÂÉú³ÉÃÜÂë
+#zookeeperçš„è¶…çº§ç®¡ç†å‘˜
+#linuxä¸‹ç”Ÿæˆå¯†ç 
 echo -n super:super | openssl dgst -binary -sha1 | openssl base64
 gG7s8t3oDEtIqF6DM9LlI/R+9Ss=
-#ÐÞ¸ÄZookeeperµÄÆô¶¯½Å±¾zkServer.sh»òzkServer.cmd  Ìí¼Ó "-Dzookeeper.DigestAuthenticationProvider.superDigest=super:gG7s8t3oDEtIqF6DM9LlI/R+9Ss="   ÀýÈç£º
+#ä¿®æ”¹Zookeeperçš„å¯åŠ¨è„šæœ¬zkServer.shæˆ–zkServer.cmd  æ·»åŠ  "-Dzookeeper.DigestAuthenticationProvider.superDigest=super:gG7s8t3oDEtIqF6DM9LlI/R+9Ss="   ä¾‹å¦‚ï¼š
 nohup "$JAVA" "-Dzookeeper.log.dir=${ZOO_LOG_DIR}" "-Dzookeeper.root.logger=${ZOO_LOG4J_PROP}" "-Dzookeeper.DigestAuthenticationProvider.superDigest=super:gG7s8t3oDEtIqF6DM9LlI/R+9Ss=" \
 -cp "$CLASSPATH" $JVMFLAGS $ZOOMAIN "$ZOOCFG" > "$_ZOO_DAEMON_OUT" 2>&1 < /dev/null &
-#ÖØÆôºóµÇÂ¼ÈÏÖ¤£¬¿ÉÒÔ²Ù×÷ËùÓÐ½Úµã
+#é‡å¯åŽç™»å½•è®¤è¯ï¼Œå¯ä»¥æ“ä½œæ‰€æœ‰èŠ‚ç‚¹
 addauth digest super:super
