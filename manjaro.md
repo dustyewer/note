@@ -115,7 +115,7 @@ yay -S redis
 yay -S docker
 
 
-打印机
+# 打印机
 sudo pacman -S manjaro-printer
 sudo systemctl enable --now cups.service
 sudo systemctl enable --now cups.socket
@@ -149,3 +149,7 @@ useradd -r mysql -M
 # 将MySQL安装目录的拥有者以及用户组修改为mysql
 chown -R mysql:mysql /usr/local/share/mysql
 
+# samba
+yay -S samba
+yay -S manjaro-settings-samba 
+systemctl start smb
