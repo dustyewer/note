@@ -11,3 +11,16 @@ url 为远程仓库地址，就是你自己新建的那个仓库的地址
 
 #第一次push
 git push -u origin master
+
+#commit 合并 -i 的参数是不需要合并的commit的hash值
+git rebase -i xxx
+pick的 会保留
+squash的会被合并掉
+
+#新建并切换到本地dev分支
+git checkout -b dev
+
+#stash
+git stash 暂存
+暂存后可以切换到其他分支，切回来后
+git stash pop 取最近一次

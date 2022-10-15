@@ -18,6 +18,9 @@ top -H -p pid
 命令模式下输入:.,$d  回车从当前行到末尾行全部删除
 gg移动到首行
 
+#vi下撤销操作
+u
+
 #sort按列排序
 -k 1 //按第一列
 
@@ -115,3 +118,52 @@ expr 15  / 3
 16进制转10进制 echo $((16#e))
 2进制转10进制 echo $((2#1010101))
 
+
+
+#硬盘检测
+smartctl --smart=on --offlineauto=on --saveauto=on /dev/sda #启动smart 
+sudo smartctl -A /dev/sda
+sudo badblocks -s -v /dev/sdb    #检测坏道    
+sudo hdparm -Tt /dev/sda #测试数度
+
+#2T以上硬盘使用GTP
+sudo parted /dev/sdb        
+sudo mkfs.ext4 /dev/sdb1   
+sudo mkfs.ext4 /dev/sdb2
+
+编辑/etc/fstab文件
+/dev/sdb1                /home/yewer/cloud        ext4    defaults        0 1
+/dev/sdb2                /home/yewer/data         ext4    defaults        0 1
+mount -a
+
+#tcpdump 
+在shell中 过滤条件中使用()时，需要加转义\
+
+#yum配置安装源
+/etc/yum.repos.d/xx.repo
+#sudo：yum-config-manager：command not found
+yum -y install yum-utils
+
+#rpm
+rpm -ivh 包全名
+rpm -e 卸载
+rpm -q -a 查询所有安装的软件
+
+视频
+
+#内网穿透
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
+sudo snap install zerotier 
+
+sudo zerotier-cli join 52b337794fb708aa
+sudo zerotier-cli listnetworks
+( wait until you get an Earth IP )
+ping earth.zerotier.net
+( you should now be able to ping our Earth test IP )
+Leave "Earth":
+
+sudo zerotier-cli leave 52b337794fb708aa
+List VL1 peers:
+
+sudo zerotier-cli listpeers
