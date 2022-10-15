@@ -167,3 +167,18 @@ sudo zerotier-cli leave 52b337794fb708aa
 List VL1 peers:
 
 sudo zerotier-cli listpeers
+
+
+#统计关键字
+grep -o 'word' 1.txt|wc -l
+
+#utf16文件的grep
+iconv -f UTF-16 -t UTF-8 filename|grep xxx
+
+timeout 60 tcpdump -i eth0 dst port 8080 -A
+
+ps -mp pid -o THREAD,tid,time|sort -k 2
+
+#查看pushgateway prometheus 的日志
+journalctl -u pushgateway -f
+journalctl -u prometheus -f
